@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/ViewConfig/v16
+/src/ViewConfig/bin/Debug/netstandard2.0
+/src/ViewConfig/obj
