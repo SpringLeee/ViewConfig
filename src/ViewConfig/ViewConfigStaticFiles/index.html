@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ViewConfig</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body style="padding-top:20px">
+
+    <div class="container-fluid">
+
+        <h2>ViewConfig</h2>
+
+        <br />
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Key</td>
+                    <td>Value</td>
+                    <td>Source</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Key</td>
+                    <td>Value</td>
+                    <td>Source</td>
+                </tr>
+                <tr>
+                    <td>Key</td>
+                    <td>Value</td>
+                    <td>Source</td>
+                </tr>
+                <tr>
+                    <td>Key</td>
+                    <td>Value</td>
+                    <td>Source</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+    <script>
+
+        $(function () {
+            get_config();
+        });
+
+        function get_config()
+        {
+            $.ajax({
+                url:"/guid30b0a20013760892e4eb5e93c60421ec",  
+                success:function (data) { 
+                    console.log(data)  
+                }
+            });  
+        } 
+
+    </script>
+
+</body>
+
+</html>

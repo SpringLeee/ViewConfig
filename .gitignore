@@ -5,3 +5,5 @@
 /.vs/ViewConfig/v16
 /src/ViewConfig/bin/Debug/netstandard2.0
 /src/ViewConfig/obj
+/samples/Sample.WebAPI/bin/Debug/net5.0
+/samples/Sample.WebAPI/obj
