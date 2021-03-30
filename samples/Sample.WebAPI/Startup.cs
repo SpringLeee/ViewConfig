@@ -34,15 +34,22 @@ namespace Sample.WebAPI
 
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            app.UseViewConfig(x => x.Map().RenderPage());
-
+        { 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample.WebAPI v1"));
-            }
+                // 自定义端点
+                app.UseViewConfig(x => x.Map("/Info")); 
+
+                // 页面格式
+                app.UseViewConfig(x => x.RenderPage()); 
+
+                // Json格式
+                app.UseViewConfig(x => x.Map().RenderJson()); 
+
+                // 文本格式
+                app.UseViewConfig(x => x.Map("/Info").RenderText());   
+
+            } 
 
             app.UseRouting();
 

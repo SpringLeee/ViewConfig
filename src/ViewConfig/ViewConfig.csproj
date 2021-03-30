@@ -7,7 +7,7 @@
 		<PackageLicenseExpression></PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/SpringLeee/ViewConfig</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SpringLeee/ViewConfig</RepositoryUrl>
-		<Version>0.0.2</Version>
+		<Version>0.0.3</Version>
 		<PackageLicenseFile></PackageLicenseFile>
 		<PackageId>ViewConfig</PackageId>
 		<AssemblyName>ViewConfig</AssemblyName>
