@@ -9,7 +9,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class DependencyInjectionExtensions
     {
         public static IApplicationBuilder UseViewConfig(this IApplicationBuilder app,Action<ViewConfigOptions> options = null)
-        {
+        { 
             ViewConfigOptions opt = new ViewConfigOptions();
              
             if (options != null) options.Invoke(opt);

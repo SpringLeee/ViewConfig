@@ -8,3 +8,5 @@
 /samples/Sample.WebAPI/bin/Debug/net5.0
 /samples/Sample.WebAPI/obj
 /src/ViewConfig/bin/Debug
+/samples/Sample.ConsoleApp/bin/Debug/net5.0
+/samples/Sample.ConsoleApp/obj

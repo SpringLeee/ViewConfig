@@ -30,7 +30,8 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             options.Render = "json";
             return options;
-        } 
+        }  
+
 
     }
 }

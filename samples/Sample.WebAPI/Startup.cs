@@ -35,7 +35,7 @@ namespace Sample.WebAPI
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseViewConfig();
+            app.UseViewConfig(x => x.Map().RenderPage());
 
             if (env.IsDevelopment())
             {
@@ -51,7 +51,8 @@ namespace Sample.WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
+            }); 
+           
         }
     }
 }
