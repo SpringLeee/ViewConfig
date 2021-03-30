@@ -1,12 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk"> 
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<Authors>SpringLee</Authors>
+		<Description>ViewConfig is a visual configuration component</Description>
+		<PackageLicenseExpression></PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/SpringLeee/ViewConfig</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SpringLeee/ViewConfig</RepositoryUrl>
+		<Version>0.0.1</Version>
+		<PackageLicenseFile></PackageLicenseFile>
+		<PackageId>ViewConfig</PackageId>
+		<AssemblyName>ViewConfig</AssemblyName>
+		<RootNamespace>ViewConfig</RootNamespace> 
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     <PackageReference Include="System.Text.Json" Version="5.0.1" />
   </ItemGroup>
 

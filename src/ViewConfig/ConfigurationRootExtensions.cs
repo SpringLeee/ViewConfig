@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 
 namespace ViewConfig
 {
     public static class ConfigurationRootExtensions
     {
-        public static string GetViewConfig(this IConfigurationRoot root)
+        public static (string json,string text) GetViewConfig(this IConfigurationRoot root)
         {
             List<ConfigModel> configs = new List<ConfigModel>();
 
@@ -16,7 +18,14 @@ namespace ViewConfig
 
             RecurseChildren(root, configs, builder, root.GetChildren(), "");
 
-            return System.Text.Json.JsonSerializer.Serialize(configs);
+            var json = System.Text.Json.JsonSerializer.Serialize(configs.OrderByDescending(x => x.Provider).ToList(), new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+
+            });
+
+            return (json,builder.ToString());
         }
 
         private static void RecurseChildren(IConfigurationRoot root, List<ConfigModel> configs, StringBuilder stringBuilder, IEnumerable<IConfigurationSection> children, string indent)

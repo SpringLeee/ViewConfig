@@ -11,48 +11,52 @@
 
 </head>
 
-<body style="padding-top:20px">
+<body style="padding-top:20px;padding-left:20px;padding-right:20px">
 
-    <div class="container-fluid">
+    <div class="container-fluid">  
+    
+        <div class="row" style="margin-bottom:20px">
 
-        <h2>ViewConfig</h2>
+            <div class="col-md-3">
+                <h2>ViewConfig</h2>
+            </div>
 
-        <br />
+            <div class="col-md-3"> 
+                <select onchange="bind_table()" class="form-control providers" style="margin-top:20px;cursor:pointer">
+                    <option value="">ALL</option>    
+                </select>
 
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <td>Key</td>
-                    <td>Value</td>
-                    <td>Source</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Key</td>
-                    <td>Value</td>
-                    <td>Source</td>
-                </tr>
-                <tr>
-                    <td>Key</td>
-                    <td>Value</td>
-                    <td>Source</td>
-                </tr>
-                <tr>
-                    <td>Key</td>
-                    <td>Value</td>
-                    <td>Source</td>
-                </tr>
-            </tbody>
-        </table>
+            </div>
 
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+            <div class="col-md-3">  </div>
+            <div class="col-md-3">  </div>
 
+
+        </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Key</td>
+                        <td>Value</td>
+                        <td>Provider</td>
+                    </tr>
+                </thead>
+                <tbody id="config-box">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
     <script>
+
+        var configs = []; 
+        var providers = []; 
 
         $(function () {
             get_config();
@@ -62,11 +66,60 @@
         {
             $.ajax({
                 url:"/guid30b0a20013760892e4eb5e93c60421ec",  
-                success:function (data) { 
-                    console.log(data)  
+                success: function (data) {   
+
+                    configs = $.parseJSON(data);   
+
+                    bind_providers();
+
+                    bind_table(); 
                 }
             });  
         } 
+
+        function bind_table() {
+
+            val = $(".providers").val();
+
+            $("#config-box").html(""); 
+
+            $.each(configs, function (i, item) {
+
+                var tr = `<tr>
+                                <td>${item.Key}</td>
+                                <td>${item.Value}</td>
+                                <td>${item.Provider}</td>
+                            </tr>`;
+
+                if (val == "" || val == null) {
+                    $("#config-box").append(tr);
+                }
+                else {
+
+                    if (item.Provider == val) {
+                        $("#config-box").append(tr);
+                    }
+                } 
+
+            });
+
+        }
+
+        function bind_providers() {
+
+            $.each(configs, function (i, item) { 
+
+                if ($.inArray(item.Provider, providers) == -1) {
+                    providers.push(item.Provider);
+                }
+
+            }); 
+
+            $.each(providers, function (i, item) {
+                $(".providers").append(`<option value="${item}">${item}</option>  `);
+            }); 
+
+        }
 
     </script>
 
