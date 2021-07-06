@@ -1,17 +1,17 @@
-## ViewConfig ½éÉÜ
+## ViewConfig ä»‹ç»
 
-ÔÚÎÒÃÇµÄ³ÌÐòÖÐ£¬ÎÒÃÇÓÐÊ±ÐèÒªÖªµÀÒ»¸öÅäÖÃÊÇÓÉÄÄÒ»¸öProviderÖ´ÐÐµÄ£¬ÒÔ¼°ÅäÖÃ³åÍ»µ¼ÖÂÎÒÃÇµÄÉèÖÃÃ»ÓÐÉúÐ§£¬ÔÚ±¾ÎÄÖÐ£¬ÎÒÃÇÔÚ.NET Core ³ÌÐòÖÐÊ¹ÓÃÁË `ViewConfig` ×é¼þÀ´µ÷ÊÔÅäÖÃ¡£
+åœ¨æœ¬æ–‡ä¸­ï¼Œæˆ‘ä»¬åœ¨.NET Core ç¨‹åºä¸­ä½¿ç”¨äº† `ViewConfig` ç»„ä»¶æ¥è°ƒè¯•é…ç½®ã€‚
 
 
-## °²×°
+## å®‰è£…
 
-Í¨¹ýNugetËÑË÷ `ViewConfig`£¬È»ºóÔÚ³ÌÐòÖÐ°²×°£¬ÕâÊÇÒ»¸ö.net standard 2.0 µÄ×é¼þ¡£ 
+é€šè¿‡Nugetæœç´¢ `ViewConfig`ï¼Œç„¶åŽåœ¨ç¨‹åºä¸­å®‰è£…ï¼Œè¿™æ˜¯ä¸€ä¸ª.net standard 2.0 çš„ç»„ä»¶ã€‚ 
 
 ![](https://blog-1259586045.cos.ap-shanghai.myqcloud.com/clipboard_20210330_054359.png)
 
-## ÉèÖÃ
+## è®¾ç½®
 
-°²×°Íê³ÉÒÔºó£¬ÐèÒªÐÞ¸Ä Startup.cs ÎÄ¼þµÄ Configure ·½·¨£¬ÎÒÃÇ¼ÓÒ»ÐÐ´úÂë `UseViewConfig`
+å®‰è£…å®Œæˆä»¥åŽï¼Œéœ€è¦ä¿®æ”¹ Startup.cs æ–‡ä»¶çš„ Configure æ–¹æ³•ï¼Œæˆ‘ä»¬åŠ ä¸€è¡Œä»£ç  `UseViewConfig`
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -28,31 +28,31 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 } 
 ```
 
-ÕâÀï½¨ÒéÔÚ¿ª·¢»·¾³ÖÐÊ¹ÓÃ£¬ºÍSwaggerÒ»Ñù£¬ È»ºóÎÒÃÇÆô¶¯³ÌÐò£¬È»ºó·ÃÎÊ `/viewconfig` ¶Ëµã 
+è¿™é‡Œå»ºè®®åœ¨å¼€å‘çŽ¯å¢ƒä¸­ä½¿ç”¨ï¼Œå’ŒSwaggerä¸€æ ·ï¼Œ ç„¶åŽæˆ‘ä»¬å¯åŠ¨ç¨‹åºï¼Œç„¶åŽè®¿é—® `/viewconfig` ç«¯ç‚¹ 
 
 ![](https://blog-1259586045.cos.ap-shanghai.myqcloud.com/clipboard_20210330_062154.png)
 
-ÉÏÃæÁÐ³öÁË³ÌÐòÖÐËùÓÐµÄÅäÖÃÏî£¬ÎÒÃÇ¿ÉÒÔ¿´µ½ Key£¬Value£¬Ò²¿ÉÒÔÍ¨¹ý Provider ÖªµÀÅäÖÃÀ´×ÔÓë appsetting.json ÎÄ¼þ»òÕßÆäËû£¬¿ÉÒÔÍ¨¹ýÏÂÀ­ÁÐ±í²é¿´²»Í¬µÄ Provider µÄÅäÖÃÐÅÏ¢¡£
+ä¸Šé¢åˆ—å‡ºäº†ç¨‹åºä¸­æ‰€æœ‰çš„é…ç½®é¡¹ï¼Œæˆ‘ä»¬å¯ä»¥çœ‹åˆ° Keyï¼ŒValueï¼Œä¹Ÿå¯ä»¥é€šè¿‡ Provider çŸ¥é“é…ç½®æ¥è‡ªä¸Ž appsetting.json æ–‡ä»¶æˆ–è€…å…¶ä»–ï¼Œå¯ä»¥é€šè¿‡ä¸‹æ‹‰åˆ—è¡¨æŸ¥çœ‹ä¸åŒçš„ Provider çš„é…ç½®ä¿¡æ¯ã€‚
 
-## ×Ô¶¨Òå
+## è‡ªå®šä¹‰
 
-Ä¬ÈÏÊ¹ÓÃµÄÊÇ `/viewconfig` ¶Ëµã£¬Êä³öµÄÊÇÒ³Ãæ£¬µ±È»Ò²Ö§³ÖÊä³ö json ºÍÎÄ±¾£¬ÏñÏÂÃæÕâÑù
+é»˜è®¤ä½¿ç”¨çš„æ˜¯ `/viewconfig` ç«¯ç‚¹ï¼Œè¾“å‡ºçš„æ˜¯é¡µé¢ï¼Œå½“ç„¶ä¹Ÿæ”¯æŒè¾“å‡º json å’Œæ–‡æœ¬ï¼Œåƒä¸‹é¢è¿™æ ·
 
 ```csharp
-// ×Ô¶¨Òå¶Ëµã
+// è‡ªå®šä¹‰ç«¯ç‚¹
 app.UseViewConfig(x => x.Map("/Info")); 
 
-// Ò³Ãæ¸ñÊ½
+// é¡µé¢æ ¼å¼
 app.UseViewConfig(x => x.RenderPage()); 
 
-// Json¸ñÊ½
+// Jsonæ ¼å¼
 app.UseViewConfig(x => x.Map().RenderJson()); 
 
-// ÎÄ±¾¸ñÊ½
+// æ–‡æœ¬æ ¼å¼
 app.UseViewConfig(x => x.Map("/Info").RenderText());   
 ```
 
-## ×Ü½á
+## æ€»ç»“
 
-ViewConfig ÊÇÒ»¸ö·Ç³£¼òµ¥µÄ×é¼þ£¬¿ÉÒÔ°ïÖúÎÒÃÇÔÚ.NET Core ³ÌÐòÖÐµ÷ÊÔÅäÖÃÐÅÏ¢£¬½ÓÏÂÀ´»¹»áÖ§³ÖÔÚ.Net Core ¿ØÖÆÌ¨ÏîÄ¿ÖÐÊ¹ÓÃ£¬ÐèÒª×¢ÒâµÄÊÇ£¬ÎÒ½¨Òé´ó¼ÒÖ»ÔÚ¿ª·¢»·¾³ÖÐÊ¹ÓÃËü£¬Ï£Íû¿ÉÒÔ¶ÔÄúÓÐ°ïÖú¡£
+ViewConfig æ˜¯ä¸€ä¸ªéžå¸¸ç®€å•çš„ç»„ä»¶ï¼Œå¯ä»¥å¸®åŠ©æˆ‘ä»¬åœ¨.NET Core ç¨‹åºä¸­è°ƒè¯•é…ç½®ä¿¡æ¯ï¼ŒæŽ¥ä¸‹æ¥è¿˜ä¼šæ”¯æŒåœ¨.Net Core æŽ§åˆ¶å°é¡¹ç›®ä¸­ä½¿ç”¨ï¼Œéœ€è¦æ³¨æ„çš„æ˜¯ï¼Œæˆ‘å»ºè®®å¤§å®¶åªåœ¨å¼€å‘çŽ¯å¢ƒä¸­ä½¿ç”¨å®ƒï¼Œå¸Œæœ›å¯ä»¥å¯¹æ‚¨æœ‰å¸®åŠ©ã€‚
 
